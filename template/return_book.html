@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    
+
+    <div class="flex justify-center h-screen">
+        <div class="mt-10">
+            <h1 class="my-8">Return Book</h1>
+            <form method="post" class="text-right">
+                {% csrf_token %}
+                <label for="lending">Select Lending:</label>
+                <select name="lending" id="lending">
+                    {% for lending in lendings %}
+                    <option value="{{ lending.id }}">{{ lending.member.name }} - {{ lending.book.title }}</option>
+                    {% endfor %}
+                </select>
+                <div class="text-center mt-4">
+                    <button type="submit" class="linav">Return Book</button>
+                </div>
+            </form>
+            <div class="text-center mt-4">
+                <a href="{% url 'lendings' %}"><button class="linav" type="button">
+                    View Lendings
+                </button></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

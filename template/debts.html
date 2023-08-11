@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Contact Number</th>
+        <th>Outstanding Debt</th>
+        <th>Aadhar Number</th>
+        <th>Settle Debt</th>
+    </tr>
+    {% for member in members %}
+    <tr>
+        <td>{{ member.name }}</td>
+        <td>{{ member.number }}</td>
+        <td>{{ member.debt }}</td>
+        <td>{{ member.aadhar_number }}</td>
+        <td><a href="{% url 'settle_debt' member.id %}"><button class="linav">Link</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

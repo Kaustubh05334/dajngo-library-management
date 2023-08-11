@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Books</h1>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Publisher</th>
+        <th>Qunatity</th>
+    </tr>
+    {% for book in books reversed %}
+    <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.publisher }}</td>
+        <td>{{ book.qty }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div class="text-center">
+    <a href="{% url 'add_book' %}"><button class="linav">Add Book</button></a>
+</div>
+{% endblock %}
+
+
+

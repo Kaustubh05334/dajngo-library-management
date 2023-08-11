@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="flex justify-center h-screen">
+        <div class="mt-10">
+            <h1 class="my-8">Lend Book</h1>
+            <form method="post" class="text-right">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="text-center mt-4">
+                    <button type="submit" class="linav">Lend Book</button>
+                </div>
+            </form>
+            <div class="text-center mt-4">
+                <a href="{% url 'lendings' %}"><button class="linav" type="button">View Lendings</button></a>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

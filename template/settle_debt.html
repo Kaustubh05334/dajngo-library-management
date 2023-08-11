@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="flex justify-center h-screen">
+    <div class="mt-10">
+        <h1 class ="text-xl">Name: {{member.name}}</h1>
+        <h1 class ="text-xl">Number: {{member.number}}</h1>
+        <h1 class ="text-xl">Current Debt: {{member.debt}}</h1>
+        <h1 class ="text-xl">Aadhar: {{member.aadhar_number}}</h1>
+        <form method="post" class="text-right">
+            {% csrf_token %}
+            <span class="text-red-600">{{error}}</span>
+            <label for="inp1" class="text-xl">Settle Amount:
+                <input type='number' name="amt" placeholder="amount" id="inp1">
+            </label>
+            <div class="text-center mt-4">
+                <button type="submit" class="linav">Settle</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

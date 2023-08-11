@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+          table {
+            @apply border-collapse border border-black mx-auto my-10;
+          }
+          td {
+            @apply border p-2 border-black;
+          }
+          th {
+            @apply border p-2 border-black;
+          }
+          input {
+            @apply border border-black rounded m-2 w-56 px-4 py-2 h-12;
+          }
+          
+          select {
+            @apply border border-black rounded m-2 px-4 w-56 py-2 h-12;
+          }
+          h1 {
+            @apply text-center text-2xl mt-4;
+          }
+          button {
+            @apply text-center;
+          }
+          label {
+            @apply text-xl;
+          }
+          
+        }
+        @layer components {
+          .linav {
+            @apply mx-2 border rounded bg-green-600 border-green-600 text-white py-2 px-4;
+          }
+        }
+    </style>
+</head>
+<body>
+    <ul class="flex flex-row p-4 bg-green-300">
+        <li class="p-2 linav"><a href="{% url 'home' %}">Home</a></li>
+        <li class="p-2 linav"><a href="{% url 'members' %}">Members</a></li>
+        <li class="p-2 linav"><a href="{% url 'books' %}">Books</a></li>
+        <li class="p-2 linav"><a href="{% url 'lendings' %}">Lendings</a></li>
+        <li class="p-2 linav"><a href="{% url 'return_book' %}">Return Book</a></li>
+        <li class="p-2 linav"><a href="{% url 'debt_view' %}">View Debts</a></li>
+        <li class="p-2 linav"><a href="{% url 'import_books' %}">Import Book</a></li>
+        <li class="p-2 linav"><a href="{% url 'lend_book' %}">Lend a Book</a></li>
+        <li class="ml-16 px-2">{% include 'search_form.html' %}</li>
+    </ul>
+    {% block body %}
+    {% endblock %} 
+</body>
+</html>

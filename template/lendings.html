@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>Lendings</h1>
+    <table>
+        <tr>
+            <th>Member</th>
+            <th>Book</th>
+            <th>Issue Date</th>
+            <th>Due Date</th>
+            <th>Returned</th>
+        </tr>
+        {% for lending in lendings reversed %}
+        <tr>
+            <td>{{ lending.member.name }}</td>
+            <td>{{ lending.book.title }}</td>
+            <td>{{ lending.issue_date }}</td>
+            <td>{{ lending.due_date }}</td>
+            <td>
+                {% if lending.returned %}
+                    Yes
+                {% else %}
+                    No
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="text-center mt-4">
+    <a href="{% url 'lend_book' %}"><button class="linav">Lend a Book</button></a>
+    </div>
+{% endblock %}
