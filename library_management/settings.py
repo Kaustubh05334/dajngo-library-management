@@ -72,17 +72,17 @@ WSGI_APPLICATION = 'library_management.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-# import dj_database_url
+import dj_database_url
 # import os
-# DATABASES = {
-#     'default': dj_database_url.config(default="postgres://library_dfpm_user:lCDBWunhddBXtvBa3cexfa3CQVC3Bi7p@dpg-cjakv2dm2m9c73ege0b0-a.oregon-postgres.render.com/library_dfpm")
-#     }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default': dj_database_url.config(default="postgres://library_dfpm_user:lCDBWunhddBXtvBa3cexfa3CQVC3Bi7p@dpg-cjakv2dm2m9c73ege0b0-a.oregon-postgres.render.com/library_dfpm")
     }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
