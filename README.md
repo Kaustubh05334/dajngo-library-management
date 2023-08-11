@@ -1,5 +1,5 @@
 # django-library-management
-### [Demo](https://dajngo-library-management-nxkuqw9vy-kaustubh05334.vercel.app/)
+### [Demo](https://dajngo-library-management.vercel.app/)
 This is a Library Management System built using Django, Tailwind CSS, and PostgreSQL. It is designed to be accessed exclusively by librarians and provides a range of features to efficiently manage library operations.
 
 ## Features
